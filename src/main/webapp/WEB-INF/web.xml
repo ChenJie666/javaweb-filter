@@ -1,0 +1,42 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>msg</servlet-name>
+    <servlet-class>com.cj.filter.TestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>msg</servlet-name>
+    <url-pattern>/msg</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>msg</servlet-name>
+    <url-pattern>/servlet/msg</url-pattern>
+  </servlet-mapping>
+
+  <filter>
+    <filter-name>filter</filter-name>
+    <filter-class>com.cj.filter.CharacterEncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>filter</filter-name>
+    <url-pattern>/servlet/*</url-pattern>
+  </filter-mapping>
+
+  <servlet>
+    <servlet-name>onlinecount</servlet-name>
+    <servlet-class>com.cj.listener.OnlineCountServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>onlinecount</servlet-name>
+    <url-pattern>/onlinecount</url-pattern>
+  </servlet-mapping>
+  <listener>
+    <listener-class>com.cj.listener.OnlineCountListener</listener-class>
+  </listener>
+
+</web-app>
